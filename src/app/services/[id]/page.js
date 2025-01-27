@@ -43,17 +43,25 @@ const page = ({ params }) => {
       category: "Writing",
     },
   ];
-  const id = params.id;
+  const id = params?.id;
   const serviceData = services.find((service) => service?.id == id);
-  return (
-    <div>
-      <p>{serviceData?.id}</p>
-      <p>{serviceData?.name}</p>
-      <p>{serviceData?.price}</p>
-      <p>{serviceData?.category}</p>
-      <p>{serviceData?.description}</p>
-    </div>
-  );
+  if (serviceData) {
+    return (
+      <div>
+        <p>{serviceData?.id}</p>
+        <p>{serviceData?.name}</p>
+        <p>{serviceData?.price}</p>
+        <p>{serviceData?.category}</p>
+        <p>{serviceData?.description}</p>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <p>Page not found</p>
+      </>
+    );
+  }
 };
 
 export default page;
