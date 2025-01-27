@@ -1,7 +1,6 @@
-import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const page = ({ params }) => {
   const services = [
     {
       id: 1,
@@ -44,21 +43,15 @@ const page = () => {
       category: "Writing",
     },
   ];
+  const id = params.id;
+  const serviceData = services.find((service) => service?.id == id);
   return (
     <div>
-      <h1>services ...</h1>
-      <div className="grid grid-cols-5 gap-4">
-        {services.map((service) => (
-          <Link
-            href={`/services/${service?.id}`}
-            key={service?.id}
-            className="border p-2 rounded-lg"
-          >
-            <p>{service?.name}</p>
-            <p>{service?.category}</p>
-          </Link>
-        ))}
-      </div>
+      <p>{serviceData?.id}</p>
+      <p>{serviceData?.name}</p>
+      <p>{serviceData?.price}</p>
+      <p>{serviceData?.category}</p>
+      <p>{serviceData?.description}</p>
     </div>
   );
 };
