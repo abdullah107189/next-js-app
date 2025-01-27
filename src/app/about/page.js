@@ -2,8 +2,8 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const page = () => {
-    const router = useRouter();
+const Page = () => {
+  const router = useRouter();
   const loggedIn = false;
   const handleGoAddressPage = () => {
     if (loggedIn) {
@@ -26,4 +26,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
