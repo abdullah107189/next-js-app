@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  keywords: ["Next.js", "React", "JavaScript"],
   title: {
     default: "Learning Next.js",
     template: "%s | Learning Next.js",

@@ -1,18 +1,19 @@
 import Link from "next/link";
 import React from "react";
 
-// export async function generateMetadata({ params }) {
-//   // read route params
-//   const id = (await params).id;
-//   return {
-//     title: product.title,
-//     description:product
-//     openGraph: {
-//       images: ["/some-specific-page-image.jpg", ...previousImages],
-//     },
-//   };
-// }
+export async function generateMetadata({ params }) {
+  // read route params
+  const id = (await params).id;
+  // fetch data
+  const user = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${id}`
+  ).then((res) => res.json());
 
+  return {
+    title: user.name,
+    description: `This page's ${user.name} info`,
+  };
+}
 const page = async ({ params }) => {
   const id = await params?.id;
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
