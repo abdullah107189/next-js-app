@@ -48,7 +48,7 @@ const page = ({ params }) => {
   const serviceData = services.find((service) => service?.id == id);
   if (serviceData) {
     return (
-      <div>
+      <div  >
         <p>{serviceData?.id}</p>
         <p>{serviceData?.name}</p>
         <p>{serviceData?.price}</p>

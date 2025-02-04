@@ -1,7 +1,11 @@
 import Link from "next/link";
 import React from "react";
-
-const page = () => {
+import style from "./poge.module.css";
+export const metadata = {
+  title: "Services",
+  description: "Load Services Data from Array on the file",
+};
+const services = () => {
   const services = [
     {
       id: 1,
@@ -52,7 +56,7 @@ const page = () => {
           <Link
             href={`/services/${service?.id}`}
             key={service?.id}
-            className="border p-2 rounded-lg"
+            className={`border p-2 rounded-lg ${style["bg-white-page"]}`}
           >
             <p>{service?.name}</p>
             <p>{service?.category}</p>
@@ -63,4 +67,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default services;
