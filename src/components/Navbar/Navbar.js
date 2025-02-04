@@ -11,7 +11,7 @@ const Navbar = () => {
         <ul className="flex gap-3 p-4 rounded-lg max-w-[1440px] mx-auto">
           <Link href={"/"}>Home</Link>
           <Link href={"/about"}>About</Link>
-          <Link href={"/services"}>Services</Link>
+          <Link href={"/users"}>Users</Link>
         </ul>
       </nav>
     );

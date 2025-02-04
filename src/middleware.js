@@ -6,9 +6,9 @@ export function middleware(request) {
     role: "admin",
     email: "xyz@gmail.com",
   };
-  const isServicesPage = request.nextUrl.pathname === "/services";
+  const isUsersPage = request.nextUrl.pathname === "/user";
   const isAdmin = userInfo?.role == "admin";
-  if (isServicesPage && !isAdmin) {
+  if (isUsersPage && !isAdmin) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
   return NextResponse.next();
