@@ -9,7 +9,6 @@ const Users = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
 
-  
   return (
     <div>
       <h1>All Users ...</h1>

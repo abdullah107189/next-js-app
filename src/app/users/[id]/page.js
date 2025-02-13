@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
     description: `This page's ${user.name} info`,
   };
 }
+
 const page = async ({ params }) => {
   const id = await params?.id;
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);

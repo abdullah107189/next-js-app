@@ -19,7 +19,6 @@ const page = () => {
   useEffect(() => {
     fetchMeal();
   }, [serach]);
-  console.log(meals);
   return (
     <div className="grid grid-cols-5 gap-4">
       <div className="col-span-5 flex items-center justify-center my-5">
