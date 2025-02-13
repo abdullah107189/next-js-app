@@ -18,7 +18,6 @@ const page = async ({ params }) => {
   const id = await params?.id;
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   const userData = await res.json();
-  console.log(userData);
   if (userData) {
     return (
       <div>

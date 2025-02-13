@@ -8,11 +8,19 @@ export const metadata = {
 const Users = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
-  console.log(data);
+
+  
   return (
     <div>
       <h1>All Users ...</h1>
       <div className="grid grid-cols-5 gap-4">
+        <div className="col-span-5 flex items-center justify-center ">
+          <input
+            className="border px-5 rounded-md bg-gray-100"
+            type="text"
+            placeholder="Enter Title Name"
+          />
+        </div>
         {data.map((user) => (
           <Link
             href={`/users/${user?.id}`}
